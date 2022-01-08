@@ -1,0 +1,11 @@
+<div>
+	        <% @contributions.each do |contribution| %>
+			<% author = User.find(contribution.user_id) %>
+			<%= author.name %><br><%= contribution.text %><br>
+			<% end %>
+			
+			<a href="/contributions/new">新しい投稿</a>
+		
+			
+</div>
+		

@@ -1,0 +1,14 @@
+<div>
+    <% @grouppages.each do |group| %>
+    <% @contribution = Contribution.find_by(id: group.contribution_id) %>
+    <% @author = User.find(@contribution.user_id) %>
+    <% @image = Image.where(@contribution.image) %>    <%= @author.name %><br>
+    <%= @contribution.text %><br>
+　　<% unless @image.empty? %>
+　　 <img src="<%= @image %>" >
+　　<% end %>
+			
+	<% end %>
+			
+			<a href="/contributions/new">新しい投稿</a>
+</div>

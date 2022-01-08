@@ -1,0 +1,14 @@
+<div>
+    <form action="/contributions" method="post" enctype="multipart/form-data">
+        <input type="text" name="contribution_text" placeholder="write something"><br>
+        <% @groupboxes.each_with_index do |groupbox, index| %>
+            <p>
+                <% @group = Group.find(groupbox.group_id) %>
+        　　　　<input type="checkbox"  name="group[]" value="<%= @group.id %>" checked="checked">
+        　　　　<%= @group.name %>
+    　　　　</p>
+　　　　<% end %>
+　　　　<input type="file" name="file">
+        <input type="submit" value="POST">
+    </form>
+</div>

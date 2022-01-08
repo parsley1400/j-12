@@ -1,0 +1,8 @@
+<div>
+    <form action="/grouplist">
+        <% @groupids.each do |groupid| %>
+        <% @group = Group.find(groupid.group_id) %>
+         <li><a href="/group/<%= groupid.group_id %>"><%= @group.name %></a></li>
+        <% end %>
+    </form>
+</div>
